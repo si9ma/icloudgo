@@ -80,6 +80,8 @@ func (r *PhotoAsset) LocalPath(outputDir string, size PhotoVersion, fileStructur
 	switch fileStructure {
 	case "name":
 		name = cleanFilename(filename)
+		// the name already has the extension after cleaning, so we can set the extension to empty
+		ext = ""
 	default:
 		name = cleanFilename(r.ID())
 	}
